@@ -15,9 +15,9 @@ class Pokedex extends Model
     protected $fillable = [
         'name',
         'image',
-        'hp',
-        'attack',
-        'defense'
+        'description',
+        'trainer',
+
     ];
 
 }

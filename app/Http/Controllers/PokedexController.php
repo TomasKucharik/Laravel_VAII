@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pokedex;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
 class PokedexController extends Controller
@@ -21,8 +22,6 @@ class PokedexController extends Controller
 
     public function store(Request $request)
     {
-
-
         $request->validate([
             'name' => 'required|unique:pokedexes,name',
             'image' => 'image|mimes:jpg,png,jpeg,gif,svg',
@@ -47,6 +46,8 @@ class PokedexController extends Controller
             $filename = time() . ' . ' . $extention;
             $file->move('public/images/', $filename);
             $pokedex->image = $filename;
+        } else {
+            //TODO nejaky stanoveny obrazok sem dať.
         }
         $pokedex->save();
         return redirect()->route('pokedex.index');
@@ -87,7 +88,7 @@ class PokedexController extends Controller
             }
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
-            $filename = time() .'.'. $extention;
+            $filename = time() . '.' . $extention;
             $file->move('public/images/', $filename);
             $pokedex->image = $filename;
         }
