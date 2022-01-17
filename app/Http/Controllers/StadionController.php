@@ -15,7 +15,16 @@ class StadionController extends Controller
     public function index()
     {
         $stadions = Stadion::all();
-        return view('stadion.index', compact('stadions'));
+        if (!Auth::check()) {
+            $this->function_alert("najskor sa prihlas ! ");
+            return view('home');
+        } elseif (Auth::user()->name == 'admin') {
+            return view('stadion.index', compact('stadions'));
+        } else {
+            $this->function_alert("Nie si admin, nemas tu co robit!");
+            return view('home');
+        }
+
 
     }
 
@@ -33,10 +42,10 @@ class StadionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:stadions',
+            'name' => 'required|string|unique:stadions',
             'image' => 'image|mimes:jpg,png,jpeg,gif,svg',
-            'description' => 'required',
-            'trainer' => 'required'
+            'description' => 'required|string',
+            'trainer' => 'required|string'
         ]);
 
 
@@ -69,10 +78,10 @@ class StadionController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|unique:stadions',
+            'name' => 'required|string|unique:stadions',
             'image' => 'image|mimes:jpg,png,jpeg,gif,svg',
-            'description' => 'required',
-            'trainer' => 'required'
+            'description' => 'required|string',
+            'trainer' => 'required|string'
         ]);
 
         $stadion = Stadion::find($id);
@@ -105,6 +114,11 @@ class StadionController extends Controller
         }
         $stadion->delete();
         return redirect()->route('stadion.index');
+    }
+
+    function function_alert($message)
+    {
+        echo "<script>alert('$message');</script>";
     }
 
 }

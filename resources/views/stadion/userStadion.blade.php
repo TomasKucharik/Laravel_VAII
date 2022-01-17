@@ -35,12 +35,7 @@
                                 <td>{{ $stadion->name }}</td>
                                 <td>{{ $stadion->description }}</td>
                                 <td>{{ $stadion->trainer }}</td>
-                                {{--                            <td>--}}
-                                {{--                                <a href="{{ url('edit-stadion/'.$stadion->id) }}"--}}
-                                {{--                                   class="btn btn-warning">Edit</a>--}}
-                                {{--                                <a href="{{ url('delete-stadion/'.$stadion->id) }}"--}}
-                                {{--                                   class="btn btn-danger btn-sm">Delete</a>--}}
-                                {{--                            </td>--}}
+
                             </tr>
                         @endforeach
                         </tbody>

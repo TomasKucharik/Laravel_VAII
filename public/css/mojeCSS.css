@@ -1,6 +1,7 @@
-body {
+.mojePozadie {
     background-color: antiquewhite;
-
+!important;
+    max-height: 80%;
 }
 
 .row {
@@ -57,4 +58,104 @@ img.img-fluid.zaokruhlenie {
     max-height: 80%;
 
 }
+
+.fajnText {
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.fajnyNadpis {
+
+    font-size: 100px;
+}
+
+.mojMalyObrazok {
+!important;
+    height: 50%;
+    width: auto;
+}
+
+.hovereffect {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+}
+
+.hovereffect .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+div.ponuka .col-sm-6 {
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.card-body {
+    background-color: burlywood;
+
+}
+
+.mojePozadieKarticky {
+    background-color: burlywood;
+}
+
+div.transparent {
+    padding: 30px;
+    background-color: black;
+    border-radius: 15px;
+
+}
+
+.produkt {
+    min-height: 900px;
+}
+
+.deletePokedex {
+    color: #000;
+    background-color: red;
+    border-color: red;
+    padding: 6px 12px;
+    border-radius: 15%;
+    line-height: 1.5;
+}
+
+
+.card-img-top {
+    flex-shrink: 0;
+    width: 100px;
+}
+
+.logo:hover {
+    animation: rotate 1s linear;
+    transform: rotate(45deg);
+}
+
+.mojeTlacitko{
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.jumbotron {
+    background: -webkit-linear-gradient(to right,red,darkgray);
+    background: linear-gradient(to right,red,darkgray);
+}
+
+.progress .progress-bar {
+    background: -webkit-linear-gradient(to right,red,darkgray);
+    background: linear-gradient(to right,red,darkgray);
+}
+
+
+
+
 

@@ -14,15 +14,21 @@ class NewsController extends Controller
     public function index()
     {
         $newses = News::all();
-//        $newses = DB::table('newses')->paginate(5);
-//        if (Auth::user()->getAuthIdentifierName() == 'admin') {
+        if (!Auth::check()) {
+            $this->function_alert("najskor sa prihlas ! ");
+            return view('home');
+        } elseif (Auth::user()->name == 'admin') {
             return view('news.index', compact('newses'));
-//        } else {
-//            return view('news.userNews', compact('newses'));
-//        }
+        } else {
+            $this->function_alert("Nie si admin, nemas tu co robit!");
+            return view('home');
+        }
+
+
     }
 
-    public function indexUser(){
+    public function indexUser()
+    {
         $newses = News::all();
         return view('news.userNews', compact('newses'));
     }
@@ -37,9 +43,9 @@ class NewsController extends Controller
 
 
         $request->validate([
-            'title' => 'required|unique:newses',
+            'title' => 'required|string|unique:newses',
             'image' => 'image|mimes:jpg,png,jpeg,gif,svg ',
-            'text' => 'required'
+            'text' => 'required|string'
         ]);
 
 
@@ -71,10 +77,11 @@ class NewsController extends Controller
     {
 
         $request->validate([
-            'title' => 'required|unique:newses',
-            'image' => 'image|mimes:jpg,png,jpeg,gif,svg | max 10000',
-            'text' => 'required | min 10 | max 255'
+            'title' => 'required|string|unique:newses',
+            'image' => 'image|mimes:jpg,png,jpeg,gif,svg ',
+            'text' => 'required|string'
         ]);
+
 
         $news = News::find($id);
         $news->title = $request->input('title');
@@ -108,4 +115,9 @@ class NewsController extends Controller
         return redirect()->route('news.index');
     }
 
+
+    function function_alert($message)
+    {
+        echo "<script>alert('$message');</script>";
+    }
 }

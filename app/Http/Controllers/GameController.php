@@ -18,9 +18,15 @@ class GameController extends Controller
     public function index()
     {
         $games = Game::all();
-//        $this->function_alert("Podme na to");
-        return view('game.index', compact('games'));
-
+        if (!Auth::check()) {
+            $this->function_alert("najskor sa prihlas ! ");
+            return view('home');
+        } elseif (Auth::user()->name == 'admin') {
+            return view('game.index', compact('games'));
+        } else {
+            $this->function_alert("Nie si admin, nemas tu co robit!");
+            return view('home');
+        }
     }
 
     public function indexUser()
@@ -37,10 +43,10 @@ class GameController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:games',
+            'name' => 'required|string|unique:games',
             'image' => 'image|mimes:jpg,png,jpeg,gif,svg',
             'release' => 'required|integer|between :1990,2022',
-            'description' => 'required'
+            'description' => 'required|string'
         ]);
 
 
@@ -73,10 +79,10 @@ class GameController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|unique:games',
+            'name' => 'required|string|unique:games',
             'image' => 'image|mimes:jpg,png,jpeg,gif,svg',
             'release' => 'required|integer|between :1990,2022',
-            'description' => 'required'
+            'description' => 'required|string'
         ]);
 
         $game = Game::find($id);

@@ -6,7 +6,7 @@
             <div class="row ">
                 <div class="col-12 text-center">
                     <div class="mb-3">
-                        <a href="{{ url('add-stadion') }}" class="btn btn-success" role="button">Add news</a>
+                        <a href="{{ url('add-stadion') }}" class="btn btn-success mojeTlacitko" role="button">Add news</a>
                     </div>
                 </div>
             </div>

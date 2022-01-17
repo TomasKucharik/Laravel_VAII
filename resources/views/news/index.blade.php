@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-{{--<link href="{{ asset('css/karticka.css') }}" rel="stylesheet">--}}
+
 
 @section('content')
     @auth
@@ -8,7 +8,7 @@
             <div class="row ">
                 <div class="col-12 text-center">
                     <div class="mb-3">
-                        <a href="{{ url('add-news') }}" class="btn btn-success" role="button">Add news</a>
+                        <a href="{{ url('add-news') }}" class="btn btn-success mojeTlacitko" role="button">Add news</a>
                     </div>
                 </div>
             </div>
@@ -16,32 +16,7 @@
     @endauth
 
 
-    {{--    <div class="row">--}}
-    {{--        <div class="col-4"></div>--}}
-    {{--        <div class="col-4">--}}
-    {{--            <table class="table-striped table-bordered table">--}}
-    {{--                <thead>--}}
-    {{--                <tr>--}}
-    {{--                    <th>Title</th>--}}
-    {{--                    <th>text</th>--}}
-    {{--                </tr>--}}
-    {{--                </thead>--}}
 
-    {{--                <tbody>--}}
-    {{--                @foreach($newses as $new)--}}
-    {{--                    <tr>--}}
-    {{--                        <td> {{ $new->title}} </td>--}}
-
-    {{--                        <td> {{ $new->text}} </td>--}}
-    {{--                    </tr>--}}
-    {{--                @endforeach--}}
-    {{--                </tbody>--}}
-
-    {{--            </table>--}}
-    {{--        </div>--}}
-    {{--        <div class="col-4"></div>--}}
-    {{--    </div>--}}
-    {{--    </div>--}}
     <div class="container">
         <div class="container-table">
             <div class="row">

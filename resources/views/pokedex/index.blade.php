@@ -13,7 +13,7 @@
             <div class="row ">
                 <div class="col-12 text-center">
                     <div class="mb-3">
-                        <a href="{{ url('add-pokedex') }}" class="btn btn-success" role="button">Add new pokemon to
+                        <a href="{{ url('add-pokedex') }}" class="btn btn-success mojeTlacitko" role="button">Add new pokemon to
                             pokedex</a>
                     </div>
                 </div>
@@ -24,15 +24,15 @@
 
 
     <div class="wrapper">
-        <div class="cards_wrap">
+        <div class="cards_wrap ">
             @foreach($pokedexes as $pokedex)
 
 
-                <div class="card_item pokedex_{{ $pokedex->id }} ">
-                    <div class="card_inner">
+                <div class="card_item pokedex_{{ $pokedex->id }}  ">
+                    <div class="card_inner mojePozadieKarticky">
                         <div class="card_top">
                             <img src="{{ asset('public/images/'.$pokedex->image) }}"
-                                 class="card-img-top mensiaKarticka img-fluid center"
+                                 class="center  mojMalyObrazok  "
                                  alt="Pokedex">
                         </div>
                         <div class="card_bottom ">
@@ -59,7 +59,7 @@
                                                         <a href="{{ url('edit-pokedex/'.$pokedex->id) }}"
                                                            class="btn btn-warning">Edit</a>
 
-                                                        <button value="{{$pokedex->id}}" class="deletePokedex" id="complexConfirm">Delete</button>
+                                                        <button value="{{$pokedex->id}}" class="deletePokedex btn btn-danger" id="complexConfirm">Delete</button>
                                                     </div>
                                                 </div>
                                             </div>

@@ -12,7 +12,16 @@ class PokedexController extends Controller
     public function index()
     {
         $pokedexes = Pokedex::all();
-        return view('pokedex.index', compact('pokedexes'));
+        if (!Auth::check()) {
+            $this->function_alert("najskor sa prihlas ! ");
+            return view('home');
+        } elseif (Auth::user()->name == 'admin') {
+            return view('pokedex.index', compact('pokedexes'));
+        } else {
+            $this->function_alert("Nie si admin, nemas tu co robit!");
+            return view('home');
+        }
+
     }
 
     public function create()
@@ -23,12 +32,11 @@ class PokedexController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:pokedexes,name',
+            'name' => 'required|string',
             'image' => 'image|mimes:jpg,png,jpeg,gif,svg',
             'hp' => 'required | integer | between:1,10',
             'attack' => 'required | integer | between:1,10',
             'defense' => 'required | integer | between:1,10'
-
 
         ]);
 
@@ -46,12 +54,10 @@ class PokedexController extends Controller
             $filename = time() . ' . ' . $extention;
             $file->move('public/images/', $filename);
             $pokedex->image = $filename;
-        } else {
-            //TODO nejaky stanoveny obrazok sem dať.
         }
         $pokedex->save();
         return redirect()->route('pokedex.index');
-        //return view('pokedex . index');
+
 
 
     }
@@ -66,7 +72,7 @@ class PokedexController extends Controller
     {
 
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|string',
             'image' => 'image|mimes:jpg,png,jpeg,gif,svg',
             'hp' => 'required | integer | between:1,10',
             'attack' => 'required | integer | between:1,10',
@@ -120,6 +126,11 @@ class PokedexController extends Controller
             "message" => "Vymazaný užívateľ."];
 
 
+    }
+
+    function function_alert($message)
+    {
+        echo "<script>alert('$message');</script>";
     }
 
 

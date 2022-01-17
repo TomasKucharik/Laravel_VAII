@@ -1,6 +1,6 @@
 
 
-<footer class="footer bg-dark text-center mt-5">
+<footer class="footer bg-dark text-center mt-5 ">
     <!-- Grid container -->
     <div class="container p-4">
 

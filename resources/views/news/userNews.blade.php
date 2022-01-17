@@ -25,7 +25,7 @@
                              class="img-fluid shadow-2-strong rounded-5 mb-4" alt=""/>
                     </div>
                     <div class="col-8">
-                        <p>{{ Str::limit($news->text) }}</p>
+                        <p>{{ ($news->text) }}</p>
                     </div>
                 </div>
             </div>

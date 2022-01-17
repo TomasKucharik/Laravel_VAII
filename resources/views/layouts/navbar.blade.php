@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img class="img"
+            <img class="img logo"
                  src=" {{ asset('images/m2i8N4N4K9i8K9d3.png') }}"  alt="pokebal">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -91,6 +91,7 @@
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
+
                             <a class="dropdown-item" href="{{ route('user.index') }}">{{ __('Admin| users') }}</a>
                             <a class="dropdown-item" href="{{ url('news') }}">{{ __('Admin| news') }}</a>
                             <a class="dropdown-item" href="{{ url('pagination') }}">{{ __('Admin| stadion') }}</a>
