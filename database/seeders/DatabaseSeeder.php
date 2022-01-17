@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'admin',
             'email' => 'admin@admin.admin',
-            'password' => Hash::make('Password')
+            'password' => Hash::make('password')
         ]);
 
         //\App\Models\Pokedex::factory(10)->create();

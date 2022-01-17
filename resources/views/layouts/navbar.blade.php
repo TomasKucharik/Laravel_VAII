@@ -35,7 +35,7 @@
 
             <ul class="navbar-nav mr-3">
                 {{--                    @auth--}}
-                <a class="nav-link" href="{{ url('stadionUser') }}">{{ __('Stadions') }}</a>
+                <a class="nav-link" href="{{ url('pagination') }}">{{ __('Stadions') }}</a>
                 {{--                    @endauth--}}
             </ul>
 
@@ -93,7 +93,7 @@
                             </a>
                             <a class="dropdown-item" href="{{ route('user.index') }}">{{ __('Admin| users') }}</a>
                             <a class="dropdown-item" href="{{ url('news') }}">{{ __('Admin| news') }}</a>
-                            <a class="dropdown-item" href="{{ url('stadion') }}">{{ __('Admin| stadion') }}</a>
+                            <a class="dropdown-item" href="{{ url('pagination') }}">{{ __('Admin| stadion') }}</a>
                             <a class="dropdown-item" href="{{ url('game') }}">{{ __('Admin| games') }}</a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

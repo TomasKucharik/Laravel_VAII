@@ -6,16 +6,19 @@ use App\Models\Game;
 use App\Models\News;
 use App\Models\Pokedex;
 use App\Models\Stadion;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+
 
 class GameController extends Controller
 {
     public function index()
     {
         $games = Game::all();
+//        $this->function_alert("Podme na to");
         return view('game.index', compact('games'));
 
     }
@@ -62,7 +65,7 @@ class GameController extends Controller
 
     public function edit($id)
     {
-        $game = Stadion::find($id);
+        $game = Game::find($id);
         return view('game.edit', compact('game'));
     }
 
@@ -108,5 +111,12 @@ class GameController extends Controller
         $game->delete();
         return redirect()->route('game.index');
     }
+
+
+    function function_alert($message)
+    {
+        echo "<script>alert('$message');</script>";
+    }
+
 
 }

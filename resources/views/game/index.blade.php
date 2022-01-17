@@ -20,37 +20,39 @@
         <div class="container-table">
             <div class="row">
                 <div class="col-12">
-                    <table class="table table-image">
-                        <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Release</th>
-                            <th scope="col">Action</th>
-
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($games as $game)
+                    <div style="overflow-x: auto">
+                        <table class="table table-image">
+                            <thead>
                             <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Release</th>
+                                <th scope="col">Action</th>
 
-                                <th scope="row"> {{ $game->id }}</th>
-                                <td class="w-25">
-                                    <img src="{{ asset('public/images/'.$game->image) }}"
-                                         class="img-fluid img-thumbnail mojaVelkost" alt="...">
-                                </td>
-                                <td>{{ $game->name }}</td>
-                                <td>{{$game->release}}</td>
-                                <td><a href="{{ url('edit-game/'.$game->id) }}"
-                                       class="btn btn-warning">Edit</a>
-                                    <a href="{{ url('delete-game/'.$game->id) }}"
-                                       class="btn btn-danger btn-sm">Delete</a>
-                                </td>
                             </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            @foreach($games as $game)
+                                <tr>
+
+                                    <th scope="row"> {{ $game->id }}</th>
+                                    <td class="w-25">
+                                        <img src="{{ asset('public/images/'.$game->image) }}"
+                                             class="img-fluid img-thumbnail mojaVelkost" alt="...">
+                                    </td>
+                                    <td>{{ $game->name }}</td>
+                                    <td>{{$game->release}}</td>
+                                    <td><a href="{{ url('edit-game/'.$game->id) }}"
+                                           class="btn btn-warning">Edit</a>
+                                        <a href="{{ url('delete-game/'.$game->id) }}"
+                                           class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

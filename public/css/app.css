@@ -234,6 +234,8 @@ h1Flip {
     }
 }
 
+
+
 /** { !important;*/
 /*    margin: 0;*/
 /*    padding: 0;*/
@@ -431,6 +433,18 @@ h1Flip {
 
 
 
+/*.fixed-background {*/
+/*    padding: 10rem 0;*/
+/*    overflow: hidden;*/
+
+/*}*/
+
+
+/*.fixed {*/
+/*    background-image: url("/images/mega_charizard_x_vs_mega_charizard_y_by_sa_dui_d7ngyrz-fullview.jpg");*/
+/*    position: fixed;*/
+/*}*/
+
 
 
 
@@ -460,7 +474,7 @@ body {
     line-height: 1.6;
     color: #212529;
     text-align: left;
-    background-color: antiquewhite;
+    background-color: black;
     min-height: 100vh; !important;
     display:flex;
     flex-direction: column;

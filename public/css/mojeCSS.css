@@ -1,0 +1,60 @@
+body {
+    background-color: antiquewhite;
+
+}
+
+.row {
+    margin-top: 100px;
+}
+
+.vlastne {
+    margin-top: 50px;
+    color: azure;
+    font-weight: bold;
+}
+
+
+.navbar-brand img {
+    height: 4rem;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-text {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 10px;
+    text-align: center;
+    color: brown;
+}
+
+h2 {
+    color: #3b5998;
+}
+
+img.img-fluid.zaokruhlenie {
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.polovicnaVelkost {
+    max-width: 80%;
+    max-height: 80%;
+
+}
+

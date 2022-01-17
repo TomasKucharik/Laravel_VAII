@@ -97,7 +97,18 @@ class PokedexController extends Controller
         return redirect()->route('pokedex.index');
     }
 
-    public function destroy($id)
+//    public function destroy($id)
+//    {
+//        $pokedex = Pokedex::find($id);
+//        $destination = 'public/images/' . $pokedex->image;
+//        if (File::exists($destination)) {
+//            File::delete($destination);
+//        }
+//        $pokedex->delete();
+//        return redirect()->route('pokedex.index');
+//    }
+
+    public function destroy1($id)
     {
         $pokedex = Pokedex::find($id);
         $destination = 'public/images/' . $pokedex->image;
@@ -105,7 +116,11 @@ class PokedexController extends Controller
             File::delete($destination);
         }
         $pokedex->delete();
-        return redirect()->route('pokedex.index');
+        return [
+            "message" => "Vymazaný užívateľ."];
+
+
     }
+
 
 }

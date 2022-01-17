@@ -38,7 +38,7 @@ class NewsController extends Controller
 
         $request->validate([
             'title' => 'required|unique:newses',
-            'image' => 'image|mimes:jpg,png,jpeg,gif,svg',
+            'image' => 'image|mimes:jpg,png,jpeg,gif,svg ',
             'text' => 'required'
         ]);
 
@@ -72,8 +72,8 @@ class NewsController extends Controller
 
         $request->validate([
             'title' => 'required|unique:newses',
-            'image' => 'image|mimes:jpg,png,jpeg,gif,svg',
-            'text' => 'required'
+            'image' => 'image|mimes:jpg,png,jpeg,gif,svg | max 10000',
+            'text' => 'required | min 10 | max 255'
         ]);
 
         $news = News::find($id);

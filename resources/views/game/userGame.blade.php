@@ -10,7 +10,7 @@
                 <div class="cardBoxFlip">
                     <div class="cardFlip">
                         <div class="frontFlip">
-                            <img src="{{ asset('public/images/'.$game->image) }}" height="200px" width="200px">
+                            <img src="{{ asset('public/images/'.$game->image) }}"  class="img-fluid rounded-circle">
                         </div>
                         <div class="backFlip">
                             <h3>Name</h3>
