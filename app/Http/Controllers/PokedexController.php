@@ -13,13 +13,10 @@ class PokedexController extends Controller
     {
         $pokedexes = Pokedex::all();
         if (!Auth::check()) {
-            $this->function_alert("najskor sa prihlas ! ");
+            $this->function_alert("Najskor sa prihlas! ");
             return view('home');
-        } elseif (Auth::user()->name == 'admin') {
-            return view('pokedex.index', compact('pokedexes'));
         } else {
-            $this->function_alert("Nie si admin, nemas tu co robit!");
-            return view('home');
+            return view('pokedex.index', compact('pokedexes'));
         }
 
     }
@@ -57,7 +54,6 @@ class PokedexController extends Controller
         }
         $pokedex->save();
         return redirect()->route('pokedex.index');
-
 
 
     }

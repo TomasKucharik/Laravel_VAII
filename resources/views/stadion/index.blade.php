@@ -6,7 +6,8 @@
             <div class="row ">
                 <div class="col-12 text-center">
                     <div class="mb-3">
-                        <a href="{{ url('add-stadion') }}" class="btn btn-success mojeTlacitko" role="button">Add news</a>
+                        <a href="{{ url('add-stadion') }}" class="btn btn-success mojeTlacitko" role="button">Add
+                            stadion</a>
                     </div>
                 </div>
             </div>
@@ -43,8 +44,7 @@
                                     <td>{{ $stadion->name }}</td>
                                     <td>{{$stadion->description}}</td>
                                     <td>{{$stadion->trainer}}</td>
-                                    <td><a href="{{ url('edit-stadion/'.$stadion->id) }}"
-                                           class="btn btn-warning">Edit</a>
+                                    <td>
                                         <a href="{{ url('delete-stadion/'.$stadion->id) }}"
                                            class="btn btn-danger btn-sm">Delete</a>
                                     </td>

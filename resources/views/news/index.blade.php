@@ -3,6 +3,7 @@
 
 
 @section('content')
+
     @auth
         <div class="container ">
             <div class="row ">
@@ -43,7 +44,7 @@
                                              class="img-fluid img-thumbnail mojaVelkost" alt="...">
                                     </td>
                                     <td>{{ $news->title }}</td>
-                                    <td>{{$news->text}}</td>
+                                    <td>{{Str::limit($news->text,50)}}</td>
                                     <td><a href="{{ url('edit-news/'.$news->id) }}"
                                            class="btn btn-warning">Edit</a>
                                         <a href="{{ url('delete-news/'.$news->id) }}"

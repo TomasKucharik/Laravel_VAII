@@ -30,6 +30,9 @@
 
 
 
+
+<!-- https://www.webslesson.info/2018/09/laravel-pagination-using-ajax.html -->
+
 <script>
     $(document).ready(function () {
 

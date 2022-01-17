@@ -15,7 +15,7 @@
             @method('PUT')
             <div class="form-group ">
                 <label for="name">name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="name"  pattern="[A-Za-z]{1,32}" maxlength="32" minlength="1"
+                <input type="text" class="form-control" id="name" name="name" placeholder="name"   maxlength="32" minlength="1"
                        value="{{ old('name',@$pokedex->name)  }}">
             </div>
 

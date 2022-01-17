@@ -4,19 +4,25 @@
 
 @section('content')
 
+    @auth
+        <div class="container ">
+            <div class="row ">
+                <div class="col-12 text-center">
+                    <div class="mb-3">
+                        <a href="{{ url('add-news') }}" class="btn btn-success mojeTlacitko" role="button">Add news</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endauth
 
 
-    <!-- Jumbotron -->
     <div class="container">
         @foreach($newses as $news)
             <div id="intro" class="p-5 text-center jumbotron mt-5">
                 <h1 class="mb-0 h4"> {{ $news->title }}</h1>
             </div>
-            <!-- Jumbotron -->
 
-            <!--Main Navigation-->
-
-            <!--Main layout-->
 
             <div class="container">
                 <div class="row mt-5">

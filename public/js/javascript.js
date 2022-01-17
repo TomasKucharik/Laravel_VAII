@@ -1,3 +1,5 @@
+<!-- Zdroj internet + youtube -->
+
 $(document).ready(function () {
     $(".deletePokedex").click(function () {
             console.log("test");
@@ -17,13 +19,12 @@ $(document).ready(function () {
                     }
                 })
                     .done(function (data, textStatus, jqXHR) {
-                        // alert(data.message);
                         $(".pokedex_" + button.val()).remove();
 
                     })
 
                     .fail(function (jqXHR, textStatus, errorThrown) {
-                        alert("Error");//ak je chyba v kode (php )
+                        alert("Error");
                     })
                     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
                     });

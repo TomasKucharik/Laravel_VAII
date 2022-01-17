@@ -13,7 +13,7 @@
             <div class="form-group ">
                 <label for="name">name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="name" required
-                       pattern="[A-Za-z]{1,32}" maxlength="32" minlength="1"
+                        maxlength="32" minlength="1"
                        value="{{ old('name',@$game->name)  }}">
             </div>
 
@@ -31,7 +31,7 @@
             <div class="form-group ">
                 <label for="description">Description</label>
                 <input type="text" class="form-control" id="description" name="description" placeholder="Description" required
-                       pattern="[A-Za-z]{1,32}" maxlength="32" minlength="1"
+                        maxlength="32" minlength="1"
                        value="{{ old('name',@$game->name)  }}">
             </div>
 

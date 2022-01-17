@@ -9,16 +9,19 @@
     </script>
 
     @auth
-        <div class="container ">
-            <div class="row ">
-                <div class="col-12 text-center">
-                    <div class="mb-3">
-                        <a href="{{ url('add-pokedex') }}" class="btn btn-success mojeTlacitko" role="button">Add new pokemon to
-                            pokedex</a>
+        @if(\Illuminate\Support\Facades\Auth::user()->name == 'admin')
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-12 text-center">
+                        <div class="mb-3">
+                            <a href="{{ url('add-pokedex') }}" class="btn btn-success mojeTlacitko" role="button">Add
+                                new pokemon to
+                                pokedex</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
     @endauth
 
 
@@ -52,18 +55,23 @@
                                     <li class="list-group-item">Attack: {{ $pokedex->attack }}</li>
                                     <li class="list-group-item">Defense: {{ $pokedex->defense }}</li>
                                     @auth
-                                        <li class="list-group-item">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-12 text-center">
-                                                        <a href="{{ url('edit-pokedex/'.$pokedex->id) }}"
-                                                           class="btn btn-warning">Edit</a>
+                                        @if(\Illuminate\Support\Facades\Auth::user()->name == 'admin')
+                                            <li class="list-group-item">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-12 text-center">
+                                                            <a href="{{ url('edit-pokedex/'.$pokedex->id) }}"
+                                                               class="btn btn-warning">Edit</a>
 
-                                                        <button value="{{$pokedex->id}}" class="deletePokedex btn btn-danger" id="complexConfirm">Delete</button>
+                                                            <button value="{{$pokedex->id}}"
+                                                                    class="deletePokedex btn btn-danger"
+                                                                    id="complexConfirm">Delete
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </li>
+                                            </li>
+                                        @endif
                                     @endauth
                                 </ul>
                             </div>

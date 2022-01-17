@@ -13,7 +13,7 @@
             <div class="form-group ">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="title" required
-                       pattern="[A-Za-z]{1,32}" maxlength="32" minlength="1"
+                        maxlength="32" minlength="1"
                        value="{{ old('title',@$news->title)  }}">
             </div>
 

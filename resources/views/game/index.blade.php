@@ -8,7 +8,8 @@
             <div class="row ">
                 <div class="col-12 text-center">
                     <div class="mb-3">
-                        <a href="{{ url('add-game') }}" class="btn btn-success mojeTlacitko" role="button">Add new game</a>
+                        <a href="{{ url('add-game') }}" class="btn btn-success mojeTlacitko" role="button">Add new
+                            game</a>
                     </div>
                 </div>
             </div>
@@ -43,9 +44,7 @@
                                     </td>
                                     <td>{{ $game->name }}</td>
                                     <td>{{$game->release}}</td>
-                                    <td><a href="{{ url('edit-game/'.$game->id) }}"
-                                           class="btn btn-warning">Edit</a>
-                                        <a href="{{ url('delete-game/'.$game->id) }}"
+                                    <td><a href="{{ url('delete-game/'.$game->id) }}"
                                            class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
